@@ -123,32 +123,32 @@ A **WhatsApp-based AI multi-agent system** that serves two user groups simultane
 
 ```
 WhatsApp Layer
-User Interface – where students & volunteers send messages
-Connected via simulated/real WhatsApp API
+   User Interface – where students & volunteers send messages
+   Connected via simulated/real WhatsApp API
 Router Agent
-Classifies message type: student, volunteer, FAQ
+   Classifies message type: student, volunteer, FAQ
 Routes to:
-Student Agent
-Uses:
-Study planner tool
-Knowledge base search
-Quiz generator
-Student profile memory
-LLM (e.g., Gemini)
-FAQ lookup
-Volunteer Agent
-Uses:
-Sheets API (schedules, logs)
-Event DB (tracking)
-LLM (e.g., Gemini)
-FAQ lookup
-Reporting tools
+   Student Agent
+      Uses:
+         Study planner tool
+         Knowledge base search
+         Quiz generator
+         Student profile memory
+         LLM (e.g., Gemini)
+         FAQ lookup
+   Volunteer Agent
+      Uses:
+         Sheets API (schedules, logs)
+         Event DB (tracking)
+         LLM (e.g., Gemini)
+         FAQ lookup
+         Reporting tools
 Storage Layer
-User profiles (students, volunteers)
-Knowledge base (curated content)
-Session logs
-Event calendar
-Progress tracking
+   User profiles (students, volunteers)
+   Knowledge base (curated content)
+   Session logs
+   Event calendar
+   Progress tracking
 
 ```
 
