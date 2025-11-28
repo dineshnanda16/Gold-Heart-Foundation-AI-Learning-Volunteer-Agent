@@ -122,43 +122,34 @@ A **WhatsApp-based AI multi-agent system** that serves two user groups simultane
 #### High-Level Design
 
 ```
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚                         WhatsApp Layer                        â”‚
-â”‚  (User Interface - where students & volunteers send messages) â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                 â”‚
-         (Simulated/Real WhatsApp API)
-                 â”‚
-        â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”
-        â”‚ Router Agent    â”‚
-        â”‚ (Message Type)  â”‚
-        â””â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”˜
-          â”‚          â”‚
-    â”Œâ”€â”€â”€â”€â”€â–¼â”€â”€â”  â”Œâ”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”
-    â”‚ Studentâ”‚  â”‚ Volunteer â”‚
-    â”‚ Agent  â”‚  â”‚ Agent     â”‚
-    â””â”€â”¬â”€â”€â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”˜
-      â”‚              â”‚
-  â”Œâ”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”    â”œâ”€ Sheets API (schedules, logs)
-  â”‚           â”‚  â”‚    â”œâ”€ Event DB (tracking)
-  â”œâ”€ LLM      â”‚  â”‚    â”œâ”€ FAQ lookup
-  â”‚  (Gemini) â”‚  â”‚    â””â”€ Reporting tools
-  â”œâ”€ Tools    â”‚  â”‚
-  â”‚ (Study    â”‚  â”‚
-  â”‚  planner, â”‚  â”‚
-  â”‚  KB       â”‚  â”‚
-  â”‚  search)  â”‚  â”‚
-  â”œâ”€ Memory   â”‚  â”‚
-  â”‚ (Student  â”‚  â”‚
-  â”‚  profile) â”‚  â”‚
-  â””â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”˜
-      â”‚
-      â””â”€ Storage Layer
-         â”œâ”€ User profiles (students, volunteers)
-         â”œâ”€ Knowledge base (curated content)
-         â”œâ”€ Session logs
-         â”œâ”€ Event calendar
-         â””â”€ Progress tracking
+WhatsApp Layer
+User Interface – where students & volunteers send messages
+Connected via simulated/real WhatsApp API
+Router Agent
+Classifies message type: student, volunteer, FAQ
+Routes to:
+Student Agent
+Uses:
+Study planner tool
+Knowledge base search
+Quiz generator
+Student profile memory
+LLM (e.g., Gemini)
+FAQ lookup
+Volunteer Agent
+Uses:
+Sheets API (schedules, logs)
+Event DB (tracking)
+LLM (e.g., Gemini)
+FAQ lookup
+Reporting tools
+Storage Layer
+User profiles (students, volunteers)
+Knowledge base (curated content)
+Session logs
+Event calendar
+Progress tracking
+
 ```
 
 #### Key Concepts from the Intensive
